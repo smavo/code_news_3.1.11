@@ -1,0 +1,9 @@
+# I got 500 error if I uncommend this line: <IfModule mod_rewrite.c>
+#http://ci.dev/index.php/welcome/index  this is works fine only if the above line commend out
+RewriteEngine On
+RewriteBase /code_news_3.1.11/
+RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /code_news_3.1.11/index.php/?$1 [L]
+# I got 500 error if I uncommend this line: </IfModule>
